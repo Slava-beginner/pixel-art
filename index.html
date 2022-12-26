@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./index.css">
+    <title>Pixel art program</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="filter"></div>
+    <div class="wrapper">
+      <canvas id="canvas"></canvas>
+      <div id="error" class="fl">
+          <div class="error">
+              Ошибка
+          </div>
+      </div>
+      <div>
+        <form id="pixel-art-options">
+        
+        
+          <button class="reset hov">
+              <span>Стереть всё</span>
+          </button>
+          <div class="eraser-container hov">
+              <div class="eraser">Ластик</div>
+          </div>
+          
+          <div class="import-container">
+              <input type="file"  class="select-file"/>
+          </div>
+          <div class="file-width file-options">
+            <label for="w">Введите ширину изображения</label>
+            <input type="number" max="60" required pattern="\d{1,2}" placeholder="40" id="w" class="file-w" />
+        </div>
+        <div class="file-height file-options">
+            <label for="h">Введите высоту изображения</label>
+            <input type="number" max="60" required pattern="\d{1,2}" placeholder="40" id="h" class="file-w" />
+        </div>
+        <div class="make-grid">
+            <button class="generate-grid hov"  type="submit"><span class="generate-grid-span">Сгенерировать сетку</span></button>
+        </div>
+        <div class="modal-open">
+            <button class="generate-modal hov"  type="button"><span class="export-span">Экспорт</span></button>
+        </div>
+        <div id="modal">
+            <ul class="tabs">
+                <li class="tab">
+                        <a  class="link generate-css" href="#css">Сгенерировать CSS</a>
+                    </li>
+                <li class="tab">
+                    <a  class="link generate-img" href="#img">Сгенерировать IMG</a></li>
+              </ul>
+              <div class="tabs-content">
+              <ul>
+                <li class="tabs-elems" id="css">
+                    <div id="popup-pixel-art">
+                    <h2>Pixel Art Code</h2>
+                    <p>Скопируйе код ниже на свой сайт</p>
+                    <div class="close"><p>Закрыть</p></div>
+                </div></li>
+                <li class="tabs-elems" id="img">
+                  <div id="white-bg">
+                  </div>
+                  <a download class="link-img">Скачать файл</a>
+                </li>
+              </ul>
+              </div>
+        </div>
+    </form>
+      </div>
+      <div id="pixel-art-colors">
+          <div class="colors">
+              <div class="color current" style="background: white;" data-color="white"></div>
+              <div class="color" style="background: #ffc231;" data-color="#ffc231"></div>
+              <div class="color" style="background: #ff6c31;" data-color="#ff6c31"></div>
+              <div class="color" style="background: #ff1c1c;" data-color="#ff1c1c"></div>
+              <div class="color" style="background: #35c161;" data-color="#35c161"></div>
+              <div class="color" style="background: #3552c1;" data-color="#3552c1"></div>
+              <div class="color" style="background: #7935c1;" data-color="#7935c1"></div>
+              <div class="select-color">
+                  <h3>Выбрать цвет</h3>
+                  <input type="color" value="" class="color-picker" />
+              </div>
+          </div>
+      </div>
+      <div id="loader"><p></p></div>
+      <div id="pixel-art-area">
+      </div>
+      
+      
+    <script src="./out.js"></script>
+    </div>
+  </body>
+</html>

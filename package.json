@@ -1,0 +1,26 @@
+{
+  "name": "pixel-art",
+  "version": "1.0.0",
+  "description": "pixel-art app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Slava-beginner/pixel-art.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Slava-beginner/pixel-art/issues"
+  },
+  "homepage": "https://github.com/Slava-beginner/pixel-art#readme",
+  "devDependencies": {
+    "electron": "^22.0.0"
+  },
+  "dependencies": {
+    "esbuild": "^0.16.10",
+    "html-to-image": "^1.11.3"
+  }
+}
