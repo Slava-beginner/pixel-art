@@ -23,7 +23,7 @@ import * as HtmlToImg from 'html-to-image'
         document.querySelector('.error').classList.remove('active');
 
         reader.onload = (async function(file) {
-            if(file.type == "image/png" || file.type == "image/jpg" || file.type == "image/gif" || file.type == "image/jpeg") {
+            if(file.type == "image/png" || file.type == "image/jpg"  || file.type == "image/jpeg") {
                 // Continue
                 const bitmap = await createImageBitmap(file);
                 const canvas = document.querySelector("canvas");
@@ -52,7 +52,7 @@ import * as HtmlToImg from 'html-to-image'
                 });
             }
             else {
-                document.querySelector('.error').textContent = 'Please select a png, jpg or gif file to upload.';
+                document.querySelector('.error').textContent = 'Пожалуйста выберите png/jpg формат файла для загрузки.';
                 document.querySelector('.error').classList.add('active');
             }
 

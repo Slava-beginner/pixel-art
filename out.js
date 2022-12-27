@@ -762,7 +762,7 @@
           }
         });
       } else {
-        document.querySelector(".error").textContent = "Please select a png, jpg or gif file to upload.";
+        document.querySelector(".error").textContent = "Пожалуйста выберите png/jpg формат файла для загрузки.";
         document.querySelector(".error").classList.add("active");
       }
     }(f);
