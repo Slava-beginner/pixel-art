@@ -32,11 +32,11 @@
           </div>
           <div class="file-width file-options">
             <label for="w">Введите ширину изображения</label>
-            <input type="number" max="60" required pattern="\d{1,2}" placeholder="40" id="w" class="file-w" />
+            <input type="number" min="10" max="60" required pattern="\d{1,2}" placeholder="40" id="w" class="file-w" />
         </div>
         <div class="file-height file-options">
             <label for="h">Введите высоту изображения</label>
-            <input type="number" max="60" required pattern="\d{1,2}" placeholder="40" id="h" class="file-w" />
+            <input type="number" min="10" max="60" required pattern="\d{1,2}" placeholder="40" id="h" class="file-w" />
         </div>
         <div class="make-grid">
             <button class="generate-grid hov"  type="submit"><span class="generate-grid-span">Сгенерировать сетку</span></button>
@@ -85,11 +85,10 @@
               </div>
           </div>
       </div>
-      <div id="loader"><p></p></div>
+      
       <div id="pixel-art-area">
       </div>
-      
-      
+      <div id="loader"><p></p></div>
     <script src="./out.js"></script>
     </div>
   </body>

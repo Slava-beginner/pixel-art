@@ -64,7 +64,7 @@ body {
   
   
   #pixel-art-area {
-      
+      margin: 0 auto;
       display: none;
       flex-direction: row;
       flex-flow: wrap;
@@ -100,12 +100,45 @@ body {
   }
   
   #pixel-art-options {
-      display: flex;
-      gap: 25px;
-      justify-content: center;
-      flex-wrap: wrap;
+    display: grid;
+    grid-template-areas:
+     "reset eraser import"
+     "w . h"
+     "make . modal"
+     ;
       margin-bottom: 30px;
       max-width: 750px;
+      min-width: 750px;
+      max-height: 175px;
+     min-height: 175px;
+  }
+  .reset{
+    grid-area: reset;
+    width: max-content;
+    justify-self: center;
+
+  }
+  .eraser-container{
+    grid-area: eraser;
+  }
+  .import-container{
+    grid-area: import;
+  }
+  .file-width{
+    grid-area: w;
+  }
+  .file-height{
+    grid-area: h;
+  }
+  .make-grid{
+    grid-area: make;
+    justify-self: center;
+    align-self: center;
+  }
+  .modal-open{
+    grid-area: modal;
+    justify-self: left;
+    align-self: center;
   }
   .file-options > label + input{
     background-color:white;
@@ -396,7 +429,7 @@ body {
           height: 0.5rem;
       }
   
-      #pixel-art-area, #pixel-art-options {
+     #pixel-art-options {
           position: relative;
           left: -2rem;
       }
@@ -411,10 +444,6 @@ body {
       }
       #popup-pixel-art pre {
           width: calc(100% - 8rem);
-      }
-      .pixelart {
-          top: 7rem;
-          right: 8rem;
       }
       #pixel-art-options {
           width: calc(100% - 4rem) !important;
@@ -478,8 +507,11 @@ body {
     border-bottom-color: hsl(8,66%,50%);
     border-right-color: hsl(42,100%,51%);
     border-radius: 50%;
-    transform: rotate(45deg);
-    margin: 150px auto;
+    /* transform: rotate(45deg); */
+    position: absolute;
+    top: 500px;
+    left: 50%;
+    transform: translate(-50%,-50%);
   }
   #loader > p {
     display: inline-block;
@@ -507,9 +539,9 @@ body {
     100% { transform: translate(-9px, -25px) rotate(360deg); }
   }
 
-  .modal-open{
+  /* .modal-open{
     display: none;
-  }
+  } */
   #modal{
    display: none;
 box-shadow: -2px 2px 5px 1px white;

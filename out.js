@@ -781,8 +781,9 @@
     e.preventDefault();
     
     const arr = document.querySelectorAll('input[type="number"]');
-    let h  = parseInt(arr[0].value)
+   
     let w = parseInt(arr[0].value)
+    let h  = parseInt(arr[1].value)
     config.width = w
     config.height = h
     const make = async () =>{
@@ -814,12 +815,13 @@
     }
   
      
-    
+    document.querySelector("#pixel-art-area").style.visibility = 'hidden'
   
     await loader(true)
     setTimeout(async () =>{
       await make()
     await loader(false)
+    document.querySelector("#pixel-art-area").style.visibility = 'visible'
     document.querySelector(".modal-open").style.display = 'block'
     },500)
   })
@@ -830,7 +832,6 @@
       document.querySelector('#modal').style.display = 'flex'
       return document.querySelector('#filter').style.display = 'block'
     }
-      console.log("work")
       alert('Хотя бы 1 пиксель должен быть закрашен!')
     
     
@@ -965,7 +966,6 @@ document.querySelectorAll(".pixel").forEach(function(item) {
 boxShadow = boxShadow.slice(0, -2);
 boxShadow = `${boxShadow};
 }`;
-console.log(boxShadow)
 let newStyle = document.createElement("style");
 newStyle.innerHTML = boxShadow;
 
@@ -975,9 +975,8 @@ newPixelArt.classList.add("pixelart");
   document.getElementById('popup-pixel-art').append(newPixelArt);
 
   let div = document.createElement("div");
-  console.log(boxShadow.slice(12,boxShadow.length-2))
   div.style = boxShadow.slice(12,boxShadow.length-2)
-  console.log(div)
+
  
 
   
@@ -989,8 +988,6 @@ newPixelArt.classList.add("pixelart");
   bg.appendChild(div)
   setTimeout(() =>{
     toPng(bg).then((data) => {
-      console.log('work')
-      console.log(data)
       let link = document.querySelector('.link-img')
       link.href = data
       link.style.display = 'inline'
