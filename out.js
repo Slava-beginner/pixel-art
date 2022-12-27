@@ -822,6 +822,7 @@
       await make()
     await loader(false)
     document.querySelector("#pixel-art-area").style.visibility = 'visible'
+    document.querySelector('#pixel-art-colors').style.display = 'block'
     document.querySelector(".modal-open").style.display = 'block'
     },500)
   })
@@ -895,6 +896,7 @@
   ["click", "input"].forEach(function(item) {
     document.querySelector(".color-picker").addEventListener(item, function() {
       document.querySelector(".error").classList.remove("active");
+      document.querySelector('#current-item').textContent = 'Кисть'
       config.color = this.value;
       document.querySelectorAll(".colors > div").forEach(function(i) {
         i.classList.remove("current");
@@ -911,6 +913,7 @@
     } else {
       item.addEventListener("click", function(e) {
         document.querySelector(".color-picker").classList.remove("current");
+        document.querySelector('#current-item').textContent = 'Кисть'
         document.querySelectorAll(".colors > div").forEach(function(i) {
           i.classList.remove("current");
         });
@@ -933,6 +936,7 @@
 
   document.querySelector(".eraser").addEventListener("click", function(e) {
     document.querySelector(".error").classList.remove("active");
+    document.querySelector('#current-item').textContent = 'Ластик'
     document.querySelectorAll(".colors > div").forEach(function(i) {
       i.classList.remove("current");
     });
@@ -992,7 +996,7 @@ newPixelArt.classList.add("pixelart");
       link.href = data
       link.style.display = 'inline'
     })
-  },5000)
+  },3000)
   
   
  

@@ -19,17 +19,22 @@
       <div>
         <form id="pixel-art-options">
         
-        
-          <button class="reset hov">
-              <span>Стереть всё</span>
-          </button>
-          <div class="eraser-container hov">
+          <div class="container-btn">
+            <a download href="./руководство пользователя.docx"  class="link-user">Руководство пользователя</a>
+            <div class="eraser-container hov">
               <div class="eraser">Ластик</div>
           </div>
+          </div>
           
+          <button class="reset hov">
+            <span>Стереть всё</span>
+        </button>
+
           <div class="import-container">
               <input type="file"  class="select-file"/>
+            
           </div>
+
           <div class="file-width file-options">
             <label for="w">Введите ширину изображения</label>
             <input type="number" min="10" max="60" required pattern="\d{1,2}" placeholder="40" id="w" class="file-w" />
@@ -82,6 +87,7 @@
               <div class="select-color">
                   <h3>Выбрать цвет</h3>
                   <input type="color" value="" class="color-picker" />
+                  <p style="margin-left: 50px;">Текущий инструмент: <span style="color:aqua;" id="current-item">Кисть</span></p>
               </div>
           </div>
       </div>
